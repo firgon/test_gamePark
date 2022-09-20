@@ -1,11 +1,16 @@
 {
+  "name": "game",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
   "private": true,
   "workspaces": [
     "rules",
     "app"
   ],
-  "author": "Romain Fromi <romain@game-park.com> (https://game-park.com/)",
-  "license": "ISC",
+  "repository": "https://github.com/firgon/test_gamePark",
+  "author": "firgon",
+  "license": "MIT",
   "devDependencies": {
     "lerna": "^4.0.0",
     "typescript": "^4.4.2"
@@ -13,5 +18,6 @@
   "scripts": {
     "start": "yarn workspace @gamepark/board-game-template-app run start",
     "build": "yarn workspace @gamepark/board-game-template-app run build"
-  }
+  },
+  "packageManager": "yarn@3.2.3"
 }
