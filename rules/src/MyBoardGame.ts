@@ -100,7 +100,7 @@ export default class MyBoardGame extends SequentialGame<GameState, Move, PlayerC
    *
    * @return The next automatic consequence that should be played in current game state.
    */
-  getAutomaticMove(): void | Move {
+  getAutomaticMoves(): Move[] {
     /**
      * Example:
      * for (const player of this.state.players) {
@@ -109,14 +109,17 @@ export default class MyBoardGame extends SequentialGame<GameState, Move, PlayerC
      *   }
      * }
      */
-    return
+    return []
   }
 
   /**
    * If you game has incomplete information, you must hide some of the game's state to the players and spectators.
    * @return What a person can see from the game state
    */
-  getView(): GameView {
+  getView(playerId?: PlayerColor): GameView {
+    console.log(playerId)
+    // Here we could, for example, return a "playerView" with only the number of cards in hand for the other player only.
+    
     return {...this.state, deck: this.state.deck.length}
   }
 
@@ -126,9 +129,7 @@ export default class MyBoardGame extends SequentialGame<GameState, Move, PlayerC
    * @return what the player can see
    */
   getPlayerView(playerId: PlayerColor): GameView {
-    console.log(playerId)
-    // Here we could, for example, return a "playerView" with only the number of cards in hand for the other player only.
-    return {...this.state, deck: this.state.deck.length}
+    return this.getView(playerId)
   }
 
   /**

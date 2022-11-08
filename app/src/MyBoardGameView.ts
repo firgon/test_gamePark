@@ -22,10 +22,10 @@ export default class MyBoardGameView implements Game<GameView, MoveView> {
    * If the backend takes time to reply, maybe we will have the reply while we are animating the first consequences. The player won't notice the latency!
    *
    * @return A MoveView which can be completely anticipated by the player or the spectator
-   */
-  getAutomaticMove(): void | MoveView {
+   
+  getAutomaticMoves(): MoveView[] {
     return
-  }
+  }*/
 
   /**
    * This is where a move is reproduced on the browser of a player. Most move will be treated the exact same way on both server and client side,
